@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 // const profile = require('./routes/api/profile');
 // const posts = require('./routes/api/posts');
 
+const con = require('./config/db')
+
 const app = express();
 
 // Body parser middleware
@@ -14,9 +16,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
 
 // Connect to Mysql
+con.connect(err => {
+  if (err) throw err
+  console.log("DB Connected")
+})
 
 // Passport middleware
 // app.use(passport.initialize());
