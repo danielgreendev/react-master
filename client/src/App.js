@@ -9,6 +9,7 @@ import Register from './component/auth/Register'
 import Other from './component/other/Other'
 import Navbar from './component/layout/Navbar'
 import Footer from './component/layout/Footer'
+import NotFound from './component/other/NotFound'
 
 import './App.css'
 
@@ -17,16 +18,19 @@ function App() {
     <div>
       <Provider store={store}>
         <Router>
-          <div className='bg'>
+          <div className='container-fluid'>
             <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/other" component={Other} />
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/other" component={Other} />
+              <Route component={NotFound} />
+            </Switch>
+            <Footer />
           </div>
         </Router>
       </Provider>
-      <Footer />
     </div>
   )
 }

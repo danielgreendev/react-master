@@ -1,3 +1,29 @@
 body {
-    background-image: url('./bg.jpg');
+    background-color: #f8f8f8;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
 }
+
+
+.donate-btn {
+    font-size: 16px;
+    border-radius: 8px;
+    height: 35px;
+    padding: 7px 15px;
+    background-color: #F9C303;
+    color: #1A2539;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.donate-btn:hover {
+    background-color: #e99f01;
+    box-shadow: 1px 1px 3px #1A2539;
+    color: white;
+    text-decoration: none;
+}
+.donate-btn:active {
+    background-color: #e99f01;
+    box-shadow: 1px 1px 1px #1A2539;
+}
+
