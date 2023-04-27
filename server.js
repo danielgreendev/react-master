@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 // const users = require('./routes/api/users');
 // const profile = require('./routes/api/profile');
 // const posts = require('./routes/api/posts');
-const upload = require('./api/upload')
+// const upload = require('./api/upload')
 
 const con = require('./config/db')
 
@@ -35,8 +35,6 @@ con.connect(err => {
 // app.use('/api/users', users);
 // app.use('/api/profile', profile);
 // app.use('/api/posts', posts);
-app.use('/api/upload', upload)
-
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
