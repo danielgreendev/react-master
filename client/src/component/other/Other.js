@@ -1,35 +1,19 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
 
-
-class Other extends Component {
-    state = {
-        selectedFile: null,
-    }
-    fileSelectedHandler = event => {
-        this.setState({
-            selectedFile: event.target.files[0]
-        });
-    }
-    fileUploadHandler = () => {
-        const formData = new FormData();
-        formData.append('file', this.state.selectedFile);
-        axios.post('/api/upload', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        }).then(res => {
-            console.log(res);
-        });
-        console.log(formData)
-    }
+export default class Other extends Component {
     render() {
+        const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+        const myString = "MyString123!";
+        if (regex.test(myString)) {
+            console.log("The string contains at least one uppercase letter, number, and special character.");
+        } else {
+            console.log("The string does not contain at least one uppercase letter, number, or special character.");
+        }
+
         return (
             <div>
-                <input type="file" onChange={this.fileSelectedHandler} />
-                <button onClick={this.fileUploadHandler}>Upload</button>
+                Other
             </div>
-        );
+        )
     }
 }
-export default Other;
