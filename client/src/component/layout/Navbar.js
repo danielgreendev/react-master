@@ -10,17 +10,17 @@ const Navbar = () => {
                 </Link>
             </li>
             <li className="nav-item">
-                <div class="dropdown">
-                    <button class="btn bg-white" type="button" data-toggle="dropdown" data-target="#dropdownMenu">
+                <div className="dropdown">
+                    <button className="btn bg-white" type="button" data-toggle="dropdown" data-target="#dropdownMenu">
                         English
                         <svg width="24" height="24" viewBox="0 0 30 30">
-                            <path d="M10 12l4 4 4-4" stroke="black" stroke-width="1" fill="none" />
+                            <path d="M10 12l4 4 4-4" stroke="black" strokeWidth="1" fill="none" />
                         </svg>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                        <a class="dropdown-item" href="#">Language 1</a>
-                        <a class="dropdown-item" href="#">Language 2</a>
-                        <a class="dropdown-item" href="#">Language 3</a>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <a className="dropdown-item" href="#">Language 1</a>
+                        <a className="dropdown-item" href="#">Language 2</a>
+                        <a className="dropdown-item" href="#">Language 3</a>
                     </div>
                 </div>
             </li>

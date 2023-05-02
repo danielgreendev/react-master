@@ -7,13 +7,13 @@ function Login() {
     };
     return (
         <div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Open modal
             </button>
 
-            <div class="modal fade" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+            <div className="modal fade" id="myModal">
+                <div className="modal-dialog">
+                    <div className="modal-content">
 
                         <div className="row">
                             <div className="col-md-12">
