@@ -38,54 +38,51 @@ function App() {
         }
     }
     return (
-        <div className="container">
-            <label>
-                Enter text:
-            </label>
-            <input type="text" value={text} onChange={handleChange} className="form-control mb-2" />
+        <div>
+            <input type="password" value={text} onChange={handleChange} className="form-control mb-2" />
             {containsUppercase ? (
-                <span className="text-success mb-2 d-block">
+                <small className="text-success mb-2 d-block">
                     <FontAwesomeIcon icon={faCheck} />&nbsp;
-                    Contains uppercase letter
-                </span>
+                    Uppercase letter
+                </small>
             ) : (
-                <span className="text-danger mb-2 d-block">
+                <small className="text-danger mb-2 d-block">
                     <FontAwesomeIcon icon={faTimes} />&nbsp;
-                    Does not contain uppercase letter
-                </span>
+                    Uppercase letter
+                </small>
             )}
             {containsNumber ? (
-                <span className="text-success mb-2 d-block">
+                <small className="text-success mb-2 d-block">
                     <FontAwesomeIcon icon={faCheck} />&nbsp;
-                    Contains number
-                </span>
+                    Number
+                </small>
             ) : (
-                <span className="text-danger mb-2 d-block">
+                <small className="text-danger mb-2 d-block">
                     <FontAwesomeIcon icon={faTimes} />&nbsp;
-                    Does not contain number
-                </span>
+                    Number
+                </small>
             )}
             {containsSpecialChar ? (
-                <span className="text-success mb-2 d-block">
+                <small className="text-success mb-2 d-block">
                     <FontAwesomeIcon icon={faCheck} />&nbsp;
-                    Contains special character
-                </span>
+                    Special character
+                </small>
             ) : (
-                <span className="text-danger mb-2 d-block">
+                <small className="text-danger mb-2 d-block">
                     <FontAwesomeIcon icon={faTimes} />&nbsp;
-                    Does not contain special character
-                </span>
+                    Special character
+                </small>
             )}
             {length ? (
-                <span className="text-success mb-2 d-block">
+                <small className="text-success mb-2 d-block">
                     <FontAwesomeIcon icon={faCheck} />&nbsp;
-                    Length must be larger than 8
-                </span>
+                    Length larger than 8
+                </small>
             ) : (
-                <span className="text-danger mb-2 d-block">
+                <small className="text-danger mb-2 d-block">
                     <FontAwesomeIcon icon={faTimes} />&nbsp;
-                    Length must be larger than 8
-                </span>
+                    Length larger than 8
+                </small>
             )}
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import LoginModal from '../auth/Login'
 
 const Navbar = () => {
     const commonLinks = (
@@ -30,10 +31,11 @@ const Navbar = () => {
         <ul className="navbar-nav ml-auto">
             {commonLinks}
             <li className="nav-item">
-                <Link className="nav-link" to='/login'>
+                <p className="nav-link" data-toggle="modal" data-target="#myModal">
                     <i className='fa fa-lock'></i>&nbsp;&nbsp;
                     Register / Login
-                </Link>
+                </p>
+                <LoginModal />
             </li>
         </ul>
     );

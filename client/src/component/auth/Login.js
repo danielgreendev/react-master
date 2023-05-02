@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
+import PasswordValidate from '../validation/Password'
+import EmailValidate from '../validation/Email'
 
 function Login() {
     const [activeTab, setActiveTab] = useState('login');
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
+    const [email, setEmail] = useState('')
+    const [isValidEmail, setIsValidEmail] = useState(undefined)
+
+    function handleChange(e) {
+        const newEmail = e.target.value
+        setEmail(newEmail)
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        setIsValidEmail(emailRegex.test(newEmail))
+    }
+
     return (
         <div>
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Open modal
-            </button>
-
             <div className="modal fade" id="myModal">
                 <div className="modal-dialog">
                     <div className="modal-content">
@@ -43,10 +52,7 @@ function Login() {
                                             <form>
                                                 <div className="form-group">
                                                     <label htmlFor="email">Email address</label>
-                                                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-                                                    <small id="emailHelp" className="form-text text-muted">
-                                                        We'll never share your email with anyone else.
-                                                    </small>
+                                                    <EmailValidate />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="password">Password</label>
@@ -61,20 +67,17 @@ function Login() {
                                             <form>
                                                 <div className="form-group">
                                                     <label htmlFor="email">Email address</label>
-                                                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-                                                    <small id="emailHelp" className="form-text text-muted">
-                                                        We'll never share your email with anyone else.
-                                                    </small>
+                                                    <EmailValidate />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="password">Password</label>
-                                                    <input type="password" className="form-control" id="password" />
+                                                    <PasswordValidate />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="confirmPassword">Confirm Password</label>
                                                     <input type="password" className="form-control" id="confirmPassword" />
                                                 </div>
-                                                <button type="submit" className="btn btn-primary">
+                                                <button type="button" className="btn btn-primary">
                                                     Register
                                                 </button>
                                             </form>
